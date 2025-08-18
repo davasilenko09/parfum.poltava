@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ParfumStore</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Playfair Display', serif; margin:0; padding:0; background-color:#f8f6f4; color:#333; }
+    header { background:#fff; padding:15px 20px; display:flex; justify-content:space-between; align-items:center; box-shadow:0 2px 10px rgba(0,0,0,0.05); }
+    nav a { margin:0 15px; text-decoration:none; color:#4a4a4a; font-weight:bold; transition:color 0.3s; }
+    nav a:hover { color:#c59d5f; }
+    .logo { font-size:24px; font-weight:bold; color:#c59d5f; font-family:'Cinzel', serif; }
+    .banner { background:url('https://images.unsplash.com/photo-1585386959984-a41552231693') center/cover no-repeat; color:white; height:350px; display:flex; align-items:center; justify-content:center; font-size:36px; font-weight:bold; text-shadow:0 2px 8px rgba(0,0,0,0.3); }
+    h2 { text-align:center; margin-bottom:20px; font-family:'Cinzel', serif; color:#c59d5f; }
+    .products, .blog, .reviews { padding:50px 20px; max-width:1200px; margin:auto; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:25px; }
+    .card { background:white; border:none; padding:15px; border-radius:12px; text-align:center; box-shadow:0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s; }
+    .card:hover { transform:translateY(-5px); }
+    .card img { max-width:100%; border-radius:8px; }
+    .price { color:#c59d5f; font-size:18px; font-weight:bold; margin-top:5px; }
+    .old-price { text-decoration:line-through; color:#999; font-size:14px; margin-left:8px; }
+    button { background:#c59d5f; color:white; padding:10px 15px; border:none; border-radius:4px; cursor:pointer; font-family:inherit; transition: background 0.3s; }
+    button:hover { background:#a67c3a; }
+    footer { background:#2c2c2c; color:white; padding:20px; text-align:center; font-size:14px; }
+    /* Корзина */
+    #cart { position:fixed; top:20px; right:20px; background:white; padding:15px; border-radius:8px; box-shadow:0 4px 15px rgba(0,0,0,0.2); max-width:300px; display:none; z-index:1000; }
+    #cart h3 { margin-top:0; }
+    #cart ul { list-style:none; padding:0; margin:0; }
+    #cart ul li { margin-bottom:10px; display:flex; justify-content:space-between; }
+    #cart button { background:#c59d5f; color:white; padding:5px 10px; border:none; border-radius:4px; cursor:pointer; font-size:12px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">ParfumStore</div>
+  <nav>
+    <a href="#">Новинки</a>
+    <a href="#">Топ-ароматы</a>
+    <a href="#">Женские</a>
+    <a href="#">Мужские</a>
+    <a href="#">Нишевые</a>
+    <a href="#">Блог</a>
+    <a href="#">Отзывы</a>
+    <a href="#">Контакты</a>
+  </nav>
+</header>
+
+<div class="banner">Найди свой идеальный аромат</div>
+
+<section class="products">
+  <h2>Хиты продаж</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1611080626919-7cf5a9dbab25" alt="Dior Sauvage">
+      <h3>Dior Sauvage</h3>
+      <div class="price">3 200 грн <span class="old-price">3 800 грн</span></div>
+      <button data-title="Dior Sauvage" data-price="3200">Купить</button>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1596464716121-8b9c6b7e9f59" alt="Chanel No.5">
+      <h3>Chanel No.5</h3>
+      <div class="price">4 500 грн</div>
+      <button data-title="Chanel No.5" data-price="4500">Купить</button>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600180758890-6a504b52d2e4" alt="Tom Ford Black Orchid">
+      <h3>Tom Ford Black Orchid</h3>
+      <div class="price">5 200 грн <span class="old-price">5 800 грн</span></div>
+      <button data-title="Tom Ford Black Orchid" data-price="5200">Купить</button>
+    </div>
+  </div>
+</section>
+
+<section class="blog">
+  <h2>Блог</h2>
+  <div class="grid">
+    <div class="card"><h3>Как выбрать аромат под настроение</h3><p>Советы по выбору парфюма, подходящего вашему настроению и образу.</p></div>
+    <div class="card"><h3>Разница между парфюмом и туалетной водой</h3><p>Разберём, чем отличаются разные концентрации ароматов.</p></div>
+    <div class="card"><h3>ТОП-5 нишевых брендов</h3><p>Наш рейтинг лучших нишевых брендов парфюмерии.</p></div>
+  </div>
+</section>
+
+<section class="reviews">
+  <h2>Отзывы клиентов</h2>
+  <div class="grid">
+    <div class="card"><strong>Анна</strong><p>Отличный сервис и быстрая доставка! Аромат потрясающий!</p></div>
+    <div class="card"><strong>Олег</strong><p>Купил в подарок жене — она в восторге. Спасибо!</p></div>
+    <div class="card"><strong>Мария</strong><p>Нишевые ароматы просто бомба, буду заказывать ещё.</p></div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 ParfumStore | О нас | Оплата и доставка | Политика конфиденциальности | Контакты</p>
+</footer>
+
+<!-- Корзина -->
+<div id="cart">
+  <h3>Корзина</h3>
+  <ul></ul>
+  <button id="closeCart">Закрыть</button>
+</div>
+
+<!-- Подключение внешнего JS -->
+<script src="script.js"></script>
+</body>
+</html>
